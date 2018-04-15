@@ -21,39 +21,42 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView listView;
+//    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView = findViewById(R.id.git_list);
+//        listView = findViewById(R.id.git_list);
+
+//
+//        WebServiceFactory.webResponce().getRepoFromUser("Wahab-Khan").enqueue(new Callback<List<GitHubModel>>() {
+//            @Override
+//            public void onResponse(Call<List<GitHubModel>> call, Response<List<GitHubModel>> response) {
+//
+//                if(response.isSuccessful() && response!=null) {
+//                    List<GitHubModel> resp = new ArrayList<>();
+//                    resp.addAll(response.body());
+//                    List<String> names = new ArrayList<>();
+//                    for (GitHubModel n:resp){
+//                        names.add(n.getName());
+//                    }
+//
+//                    ListAdapter adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_expandable_list_item_1, names);
+//
+//                    listView.setAdapter(adapter);
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<GitHubModel>> call, Throwable t) {
+//                Toast.makeText(MainActivity.this, "this shit is not working", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
 
-        WebServiceFactory.webResponce().getRepoFromUser("Wahab-Khan").enqueue(new Callback<List<GitHubModel>>() {
-            @Override
-            public void onResponse(Call<List<GitHubModel>> call, Response<List<GitHubModel>> response) {
 
-                if(response.isSuccessful() && response!=null) {
-                    List<GitHubModel> resp = new ArrayList<>();
-                    resp.addAll(response.body());
-                    List<String> names = new ArrayList<>();
-                    for (GitHubModel n:resp){
-                        names.add(n.getName());
-                    }
-
-                    ListAdapter adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_expandable_list_item_1, names);
-
-                    listView.setAdapter(adapter);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<GitHubModel>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "this shit is not working", Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 }

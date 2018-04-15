@@ -6,5 +6,6 @@
         <item> يرجى التأكد من توفر اتصال الأنترنت</item>
     </string-array>
 
-
+    <string name="firstFrag">Teams</string>
+    <string name="secFrag">Players</string>
 </resources>
